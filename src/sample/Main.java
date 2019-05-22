@@ -8,18 +8,23 @@ import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
+import javafx.scene.control.Button;
 
 public class Main extends Application { //main calls launch, which calls start
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("main-screen.fxml"));
         primaryStage.setTitle("Inventory Management System"); // stage title
-        primaryStage.setScene(new Scene(root, 600, 550)); // scene to be displayed on primaryStage
+        Button exit = new Button("Exit Program"); // new button
+        exit.setWrapText(true); // button text wrap
+        exit.setMaxSize(200, 100); // button size
+        //primaryStage.setScene(new Scene(new StackPane(exit), 600, 550)); // scene is sent a stackpane, stackpane is sent a button
+        primaryStage.setScene(new Scene(root, 600, 550));
         primaryStage.show(); // shows this stage
 
-        VBox addPartVBox = new VBox(new Label("Add Part")); // what is VBox?
-        Scene addPartScene = new Scene(addPartVBox, 300, 275); // make another scene, pass VBox to it
+        VBox addPartVBox = new VBox(new Label("Add Part")); // VBox positions child nodes in vertical row
+        Scene addPartScene = new Scene(addPartVBox, 300, 275); // make another scene, pass VBox vertical row to it
 
         Stage addPartStage = new Stage(); // make another stage
         addPartStage.setTitle("Add Part"); // set title
@@ -28,12 +33,10 @@ public class Main extends Application { //main calls launch, which calls start
         addPartStage.initOwner(primaryStage); // make primaryStage own this stage, but why???
         addPartStage.setScene(addPartScene); // set scene to stage
         addPartStage.initModality(Modality.APPLICATION_MODAL); // make this stage a blocking modal
-        addPartStage.show(); // show it!
+        //addPartStage.show(); // show it!
     }
-
 
     public static void main(String[] args) {
         launch(args); // launches the JavaFX application (calls start)
-
     }
 }
