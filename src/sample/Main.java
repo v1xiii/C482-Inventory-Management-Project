@@ -20,7 +20,7 @@ public class Main extends Application { //main calls launch, which calls start
         exit.setWrapText(true); // button text wrap
         exit.setMaxSize(200, 100); // button size
         //primaryStage.setScene(new Scene(new StackPane(exit), 600, 550)); // scene is sent a stackpane, stackpane is sent a button
-        primaryStage.setScene(new Scene(root, 600, 550));
+        primaryStage.setScene(new Scene(root, 1500, 750));
         primaryStage.show(); // shows this stage
 
         VBox addPartVBox = new VBox(new Label("Add Part")); // VBox positions child nodes in vertical row
