@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
     </columnConstraints>
@@ -21,7 +21,7 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 1px;">
+        <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" GridPane.halignment="CENTER">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="685.0" minWidth="10.0" prefWidth="662.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="1111.0" minWidth="10.0" prefWidth="372.0" />
@@ -32,6 +32,12 @@
                 <RowConstraints maxHeight="436.0" minHeight="10.0" prefHeight="316.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="323.0" minHeight="10.0" prefHeight="285.0" vgrow="SOMETIMES" />
             </rowConstraints>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets right="60.0" />
+            </padding>
             <children>
                 <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
                     <children>
@@ -78,7 +84,7 @@
                                 <Insets left="80.0" />
                             </GridPane.margin>
                         </Label>
-                        <TextField GridPane.columnIndex="1" />
+                        <TextField disable="true" GridPane.columnIndex="1" />
                         <TextField layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -147,7 +153,7 @@
                                 <Insets bottom="10.0" top="10.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button layoutX="545.0" layoutY="484.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                        <Button fx:id="closeButton" cancelButton="true" onAction="#closeWindow" layoutX="545.0" layoutY="484.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
                             <GridPane.margin>
                                 <Insets bottom="40.0" />
                             </GridPane.margin>
@@ -160,12 +166,6 @@
                     </children>
                 </GridPane>
             </children>
-            <opaqueInsets>
-                <Insets />
-            </opaqueInsets>
-            <padding>
-                <Insets right="60.0" />
-            </padding>
         </GridPane>
     </children>
     <padding>

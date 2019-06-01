@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.control.ToggleGroup?>
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddPartScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="206.0" />
@@ -39,8 +40,11 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <RadioButton mnemonicParsing="false" text="In-House" GridPane.columnIndex="1" />
-                <RadioButton mnemonicParsing="false" text="Outsourced" GridPane.columnIndex="2" />
+                <fx:define>
+                    <ToggleGroup fx:id="toggleGroup" />
+                </fx:define>
+                <RadioButton toggleGroup="$toggleGroup" mnemonicParsing="false" text="In-House" GridPane.columnIndex="1" selected="true" />
+                <RadioButton toggleGroup="$toggleGroup" mnemonicParsing="false" text="Outsourced" GridPane.columnIndex="2" />
                 <Label text="Add Part" textFill="#1a0dd7">
                     <font>
                         <Font name="System Bold" size="24.0" />
@@ -62,7 +66,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="cancel" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                <Button fx:id="closeButton" cancelButton="true" onAction="#closeWindow" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
                 <Button fx:id="save" mnemonicParsing="false" prefWidth="75.0" text="Save" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
             </children>
             <GridPane.margin>
@@ -117,7 +121,7 @@
                         <Insets left="80.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField GridPane.columnIndex="1" />
+                <TextField disable="true" GridPane.columnIndex="1" />
                 <TextField layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
