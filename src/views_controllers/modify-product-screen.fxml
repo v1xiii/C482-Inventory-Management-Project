@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<GridPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductScreenController">
+<GridPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views_controllers.AddProductScreenController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
     </columnConstraints>
@@ -101,7 +101,7 @@
                         </HBox>
                     </children>
                 </GridPane>
-                <Label text="Add Product" textFill="#1a0dd7">
+                <Label text="Modify Product" textFill="#1a0dd7">
                     <font>
                         <Font name="System Bold" size="24.0" />
                     </font>

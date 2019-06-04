@@ -1,20 +1,16 @@
-package sample;
+package c482_lee_scholl;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.layout.VBox;
-import javafx.scene.control.Label;
-import javafx.stage.Modality;
-import javafx.scene.control.Button;
 
 public class Main extends Application { //main calls launch, which calls start
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("main-screen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views_controllers/main-screen.fxml"));
         primaryStage.setTitle("Inventory Management System"); // stage title
         //Button exit = new Button("Exit Program"); // new button
         //exit.setWrapText(true); // button text wrap
@@ -42,6 +38,5 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* change package name for fxml and controllers from "sample" to "view_controller"
 * implement radio toggle switching the companyName/machineID field
 * */
