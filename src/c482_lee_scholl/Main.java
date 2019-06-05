@@ -38,6 +38,6 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* fill out the rest of the setters/getters/etc for the other classes
-* add parts!
+* read up on observableLists
+*
 * */
