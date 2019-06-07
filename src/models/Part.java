@@ -29,44 +29,45 @@ public abstract class Part extends Inventory{
         this.name = name;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public void setStock(int stock) {
         this.stock = stock;
     }
 
-    public void setMin(int min) {
-        this.min = min;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void setMax(int max) {
         this.max = max;
     }
 
+    public void setMin(int min) {
+        this.min = min;
+    }
+
     // getters
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public int getStock() {
-        return stock;
-    }
-
-    public int getMin() {
-        return min;
+        return this.stock;
     }
 
     public int getMax() {
-        return max;
+        return this.max;
     }
+
+    public int getMin() {
+        return this.min;
+    }
+
 }

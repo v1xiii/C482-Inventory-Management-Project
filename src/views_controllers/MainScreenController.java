@@ -1,5 +1,11 @@
 package views_controllers;
 
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import models.*;
+
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,13 +14,19 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainScreenController {
+public class MainScreenController implements Initializable {
 
-    //@FXML
-    //private Button exitButton;
-    //@FXML
-    //private Button addPartButton;
+    //@FXML private Button exitButton;
+    //@FXML private Button addPartButton;
+
+    @FXML private TableView<Part> partTable;
+    @FXML private TableColumn<Part, Integer> partTableColID;
+    @FXML private TableColumn<Part, String> partTableColName;
+    @FXML private TableColumn<Part, Integer> partTableColInv;
+    @FXML private TableColumn<Part, Double> partTableColPrice;
 
     @FXML
     public void exitProgram(ActionEvent event) {
@@ -63,6 +75,15 @@ public class MainScreenController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 1366, 768));
         stage.show();
+    }
+
+    public void initialize(URL url, ResourceBundle rb) {
+        partTableColID.setCellValueFactory(new PropertyValueFactory<Part, Integer>("id"));
+        partTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
+        partTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
+        partTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
+        partTable.refresh();
+        partTable.setItems(Inventory.getAllParts());
     }
 }
 

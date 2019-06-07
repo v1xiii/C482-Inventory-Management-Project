@@ -3,9 +3,9 @@ package models;
 public class Outsourced extends Part{
     private String companyName;
 
-    Outsourced(){};
+    public Outsourced(){};
 
-    Outsourced(String companyName){
+    public Outsourced(String companyName){
         this.companyName = companyName;
     }
 
@@ -20,6 +20,6 @@ public class Outsourced extends Part{
     }
 
     public String getCompanyName() {
-        return companyName;
+        return this.companyName;
     }
 }

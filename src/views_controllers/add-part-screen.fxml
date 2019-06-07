@@ -42,8 +42,8 @@
                 <fx:define>
                     <ToggleGroup fx:id="toggleGroup" />
                 </fx:define>
-                <RadioButton fx:id="inHouse_Radio" onAction="#inHouseRadioHandler" toggleGroup="$toggleGroup" mnemonicParsing="false" text="In-House" GridPane.columnIndex="1" selected="true" />
-                <RadioButton fx:id="outsourced_Radio" onAction="#outsourcedRadioHandler" toggleGroup="$toggleGroup" mnemonicParsing="false" text="Outsourced" GridPane.columnIndex="2" />
+                <RadioButton fx:id="addPartRadioInHouse" onAction="#inHouseRadioHandler" toggleGroup="$toggleGroup" mnemonicParsing="false" text="In-House" GridPane.columnIndex="1" selected="true" />
+                <RadioButton fx:id="addPartRadioOutsourced" onAction="#outsourcedRadioHandler" toggleGroup="$toggleGroup" mnemonicParsing="false" text="Outsourced" GridPane.columnIndex="2" />
                 <Label text="Add Part" textFill="#1a0dd7">
                     <font>
                         <Font name="System Bold" size="24.0" />
@@ -65,8 +65,8 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="closeButton" cancelButton="true" onAction="#closeWindow" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                <Button fx:id="save" mnemonicParsing="false" prefWidth="75.0" text="Save" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                <Button fx:id="addPartButtonCancel" cancelButton="true" onAction="#closeWindow" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                <Button fx:id="addPartButtonSave" onAction="#addPartSaveButtonHandler" mnemonicParsing="false" prefWidth="75.0" text="Save" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
             </children>
             <GridPane.margin>
                 <Insets right="20.0" />
@@ -110,7 +110,7 @@
                         <Insets left="80.0" />
                     </GridPane.margin>
                 </Label>
-                <Label fx:id="inHouseOutsourced_Label" text="Machine ID" GridPane.rowIndex="5">
+                <Label fx:id="addPartLabelCompOrMach" text="Machine ID" GridPane.rowIndex="5">
                     <GridPane.margin>
                         <Insets left="80.0" />
                     </GridPane.margin>
@@ -120,24 +120,24 @@
                         <Insets left="80.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField disable="true" GridPane.columnIndex="1" />
-                <TextField layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="addPartFieldID" disable="true" GridPane.columnIndex="1" />
+                <TextField fx:id="addPartFieldName" layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="addPartFieldInv" layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="addPartFieldPrice" layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
                     <children>
-                        <TextField />
+                        <TextField fx:id="addPartFieldMax" />
                         <Label text="Min">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Label>
-                        <TextField layoutX="10.0" layoutY="10.0" scaleX="0.75" />
+                        <TextField fx:id="addPartFieldMin" layoutX="10.0" layoutY="10.0" scaleX="0.75" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" layoutX="197.0" layoutY="250.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <children>
-                        <TextField />
+                        <TextField fx:id="addPartFieldCompOrMach" />
                     </children>
                 </HBox>
             </children>
