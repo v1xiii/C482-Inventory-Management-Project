@@ -28,6 +28,8 @@ public class MainScreenController implements Initializable {
     @FXML private TableColumn<Part, Integer> partTableColInv;
     @FXML private TableColumn<Part, Double> partTableColPrice;
 
+    private static Part partToModify;
+
     @FXML
     public void exitProgram(ActionEvent event) {
         System.exit(0);
@@ -44,8 +46,19 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    public static Part getPartToModify(){
+        return partToModify;
+    }
+
+    private void setPartToModify(Part partToModify) {
+        MainScreenController.partToModify = partToModify;
+    }
+
     @FXML
     public void openModifyParts(ActionEvent event) throws IOException {
+
+        setPartToModify(partTable.getSelectionModel().getSelectedItem());
+
         Parent root = FXMLLoader.load(getClass().getResource("modify-part-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Modify Part");
@@ -86,5 +99,3 @@ public class MainScreenController implements Initializable {
         partTable.setItems(Inventory.getAllParts());
     }
 }
-
-

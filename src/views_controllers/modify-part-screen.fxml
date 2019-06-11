@@ -121,24 +121,24 @@
                         <Insets left="80.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField disable="true" GridPane.columnIndex="1" />
-                <TextField layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <TextField layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="ModifyPartFieldID" disable="true" GridPane.columnIndex="1" />
+                <TextField fx:id="modifyPartFieldName" layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="modifyPartFieldInv" layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="modifyPartFieldPrice" layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
                     <children>
-                        <TextField />
+                        <TextField fx:id="modifyPartFieldMax" />
                         <Label text="Min">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Label>
-                        <TextField layoutX="10.0" layoutY="10.0" scaleX="0.75" />
+                        <TextField fx:id="modifyPartFieldMin" layoutX="10.0" layoutY="10.0" scaleX="0.75" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" layoutX="197.0" layoutY="250.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <children>
-                        <TextField />
+                        <TextField fx:id="modifyPartFieldCompOrMach" />
                     </children>
                 </HBox>
             </children>
