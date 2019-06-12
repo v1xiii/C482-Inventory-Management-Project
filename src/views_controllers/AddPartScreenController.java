@@ -1,7 +1,9 @@
 package views_controllers;
 
+import com.sun.org.apache.xml.internal.security.Init;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,9 +14,13 @@ import models.InHouse;
 import models.Inventory;
 import models.Outsourced;
 
-public class AddPartScreenController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AddPartScreenController implements Initializable {
 
     private String partType;
+    private int partID;
 
     @FXML private RadioButton addPartRadioInHouse;
     @FXML private RadioButton addPartRadioOutsourced;
@@ -60,7 +66,7 @@ public class AddPartScreenController {
         String partMin = addPartFieldMax.getText();
         String partMax = addPartFieldMin.getText();
         String partCompOrMach = addPartFieldCompOrMach.getText();
-        int partID = Inventory.getPartsLength() + 1;
+
 
         if (partType == "In House") {
             InHouse inHousePart = new InHouse();
@@ -87,5 +93,10 @@ public class AddPartScreenController {
             System.out.println("Part name: " + partName);
             System.out.println("Parts length: " + Inventory.getPartsLength());
         }
+    }
+
+    public void initialize(URL url, ResourceBundle rb) {
+        partID = Inventory.getPartsLength() + 1;
+        addPartFieldID.setText(Integer.toString(partID));
     }
 }

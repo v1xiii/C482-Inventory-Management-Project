@@ -121,7 +121,7 @@
                         <Insets left="80.0" />
                     </GridPane.margin>
                 </Label>
-                <TextField fx:id="ModifyPartFieldID" disable="true" GridPane.columnIndex="1" />
+                <TextField fx:id="modifyPartFieldID" disable="true" GridPane.columnIndex="1" />
                 <TextField fx:id="modifyPartFieldName" layoutX="197.0" layoutY="28.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField fx:id="modifyPartFieldInv" layoutX="197.0" layoutY="88.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="modifyPartFieldPrice" layoutX="197.0" layoutY="328.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

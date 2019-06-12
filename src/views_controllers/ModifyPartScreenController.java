@@ -32,9 +32,9 @@ public class ModifyPartScreenController implements Initializable {
 
     public void initialize(URL url, ResourceBundle rb) {
         Part part = MainScreenController.getPartToModify();
-        //System.out.println("Part name: " + part.getName());
+        //System.out.println("ID: " + part.getId());
 
-        //modifyPartFieldID.setText(Integer.toString(part.getId()));
+        modifyPartFieldID.setText(Integer.toString(part.getId()));
         modifyPartFieldName.setText(part.getName());
         modifyPartFieldInv.setText(Integer.toString(part.getStock()));
         modifyPartFieldPrice.setText(Double.toString(part.getPrice()));
