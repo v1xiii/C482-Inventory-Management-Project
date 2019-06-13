@@ -38,6 +38,6 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* Is my inhouse outsourced value being set when I add a part? The wrong radio is selected in modify part.
 *
+* Build the modify part save function
 * */

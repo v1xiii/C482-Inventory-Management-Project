@@ -14,7 +14,6 @@ public abstract class Part extends Inventory{
         this.id = id;
         this.name = name;
         this.price = price;
-        this.name = name;
         this.stock = stock;
         this.min = min;
         this.max = max;

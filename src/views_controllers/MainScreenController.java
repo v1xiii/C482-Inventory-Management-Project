@@ -97,5 +97,8 @@ public class MainScreenController implements Initializable {
         partTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
         partTable.refresh();
         partTable.setItems(Inventory.getAllParts());
+
+        Inventory.getAllParts().add(new InHouse(1, "10-20mm lens", 250.02, 11, 1, 100, 4100));
+        Inventory.getAllParts().add(new Outsourced(2, "20-30mm lens", 300.01, 10, 1, 100, "Nikon"));
     }
 }

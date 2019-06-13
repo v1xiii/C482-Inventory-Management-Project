@@ -30,9 +30,11 @@ public class ModifyPartScreenController implements Initializable {
     @FXML private TextField modifyPartFieldCompOrMach;
     @FXML private Button modifyPartButtonSave;
 
+    private Part part;
+    private String labelInitialValue;
+
     public void initialize(URL url, ResourceBundle rb) {
-        Part part = MainScreenController.getPartToModify();
-        //System.out.println("ID: " + part.getId());
+        part = MainScreenController.getPartToModify();
 
         modifyPartFieldID.setText(Integer.toString(part.getId()));
         modifyPartFieldName.setText(part.getName());
@@ -43,12 +45,14 @@ public class ModifyPartScreenController implements Initializable {
 
         if (part instanceof InHouse) {
             inHouseOutsourced_Label.setText("Machine ID");
+            labelInitialValue = "Machine ID";
             modifyPartFieldCompOrMach.setText(Integer.toString(((InHouse) part).getMachineId()));
             inHouse_Radio.setSelected(true);
             //outsourced_Radio.setSelected(false);
         }
         else {
             inHouseOutsourced_Label.setText("Company Name");
+            labelInitialValue = "Company Name";
             modifyPartFieldCompOrMach.setText(((Outsourced) part).getCompanyName());
             outsourced_Radio.setSelected(true);
             //inHouse_Radio.setSelected(false);
@@ -64,7 +68,14 @@ public class ModifyPartScreenController implements Initializable {
     @FXML
     private void inHouseRadioHandler(ActionEvent event) {
         if (inHouse_Radio.isSelected()) {
+
             inHouseOutsourced_Label.setText("Machine ID");
+
+            if (modifyPartFieldCompOrMach.getText().isEmpty() || labelInitialValue.equals("Machine ID")){
+                modifyPartFieldCompOrMach.setText(Integer.toString(((InHouse) part).getMachineId()));
+            } else {
+                modifyPartFieldCompOrMach.setText("");
+            }
             //inHouse_Radio.setSelected(false);
         }
     }
@@ -72,9 +83,15 @@ public class ModifyPartScreenController implements Initializable {
     @FXML
     private void outsourcedRadioHandler(ActionEvent event) {
         if (outsourced_Radio.isSelected()) {
+
             inHouseOutsourced_Label.setText("Company Name");
+
+            if (modifyPartFieldCompOrMach.getText().isEmpty() || labelInitialValue.equals("Company Name")){
+                modifyPartFieldCompOrMach.setText(((Outsourced) part).getCompanyName());
+            } else {
+                modifyPartFieldCompOrMach.setText("");
+            }
             //outsourced_Radio.setSelected(false);
         }
     }
-
 }
