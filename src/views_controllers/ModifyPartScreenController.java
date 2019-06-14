@@ -10,6 +10,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.InHouse;
+import models.Inventory;
 import models.Outsourced;
 import models.Part;
 
@@ -33,8 +34,14 @@ public class ModifyPartScreenController implements Initializable {
     private Part part;
     private String labelInitialValue;
 
+    private int partID;
+
     public void initialize(URL url, ResourceBundle rb) {
         part = MainScreenController.getPartToModify();
+
+        partID = part.getId() - 1;
+
+        System.out.println(partID);
 
         modifyPartFieldID.setText(Integer.toString(part.getId()));
         modifyPartFieldName.setText(part.getName());
@@ -92,6 +99,38 @@ public class ModifyPartScreenController implements Initializable {
                 modifyPartFieldCompOrMach.setText("");
             }
             //outsourced_Radio.setSelected(false);
+        }
+    }
+
+    @FXML
+    private void modifyPartSaveButtonHandler() {
+        String partName = modifyPartFieldName.getText();
+        String partInv = modifyPartFieldInv.getText();
+        String partPrice = modifyPartFieldPrice.getText();
+        String partMin = modifyPartFieldMax.getText();
+        String partMax = modifyPartFieldMin.getText();
+        String partCompOrMach = modifyPartFieldCompOrMach.getText();
+
+        if (inHouse_Radio.isSelected()) {
+            InHouse inHousePart = new InHouse();
+            inHousePart.setId(partID + 1);
+            inHousePart.setName(partName);
+            inHousePart.setStock(Integer.parseInt(partInv));
+            inHousePart.setPrice(Double.parseDouble(partPrice));
+            inHousePart.setMax(Integer.parseInt(partMax));
+            inHousePart.setMin(Integer.parseInt(partMin));
+            inHousePart.setMachineId(Integer.parseInt(partCompOrMach));
+            Inventory.updatePart(partID, inHousePart);
+        } else {
+            Outsourced outsourcedPart = new Outsourced();
+            outsourcedPart.setId(partID + 1);
+            outsourcedPart.setName(partName);
+            outsourcedPart.setStock(Integer.parseInt(partInv));
+            outsourcedPart.setPrice(Double.parseDouble(partPrice));
+            outsourcedPart.setMax(Integer.parseInt(partMax));
+            outsourcedPart.setMin(Integer.parseInt(partMin));
+            outsourcedPart.setCompanyName(partCompOrMach);
+            Inventory.updatePart(partID, outsourcedPart);
         }
     }
 }

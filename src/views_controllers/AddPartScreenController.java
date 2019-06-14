@@ -80,7 +80,6 @@ public class AddPartScreenController implements Initializable {
             inHousePart.setMin(Integer.parseInt(partMin));
             inHousePart.setMachineId(Integer.parseInt(partCompOrMach));
             Inventory.addPart(inHousePart);
-            System.out.println(inHousePart.getClass());
         } else {
             Outsourced outsourcedPart = new Outsourced();
             outsourcedPart.setId(partID);
@@ -91,13 +90,12 @@ public class AddPartScreenController implements Initializable {
             outsourcedPart.setMin(Integer.parseInt(partMin));
             outsourcedPart.setCompanyName(partCompOrMach);
             Inventory.addPart(outsourcedPart);
-            System.out.println(outsourcedPart.getClass());
         }
     }
 
     public void initialize(URL url, ResourceBundle rb) {
         partType = "In House";
-        partID = Inventory.getPartsLength() + 1;
+        partID = Inventory.getPartsLength();
         addPartFieldID.setText(Integer.toString(partID));
     }
 }

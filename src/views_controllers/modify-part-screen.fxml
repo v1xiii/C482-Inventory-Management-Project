@@ -67,7 +67,7 @@
             </rowConstraints>
             <children>
                 <Button fx:id="closeButton" cancelButton="true" onAction="#closeWindow" mnemonicParsing="false" prefWidth="75.0" text="Cancel" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                <Button fx:id="save" mnemonicParsing="false" prefWidth="75.0" text="Save" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+                <Button fx:id="modifyPartButtonSave" onAction="#modifyPartSaveButtonHandler" mnemonicParsing="false" prefWidth="75.0" text="Save" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
             </children>
             <GridPane.margin>
                 <Insets right="20.0" />
