@@ -24,11 +24,11 @@ public class Inventory {
     }
 
     public static ObservableList<Part> lookupPart(String partName){
-        return null;
+        return allParts;
     }
 
     public static ObservableList<Product> lookupProduct(String productName){
-        return null;
+        return allProducts;
     }
 
     public static void updatePart(int index, Part part){
@@ -61,5 +61,40 @@ public class Inventory {
 
     public static int getProductsLength(){
         return allProducts.size();
+    }
+
+    public static int searchParts(String searchTerm){
+        boolean isFound = false;
+        int index = 0;
+
+        if(isInteger(searchTerm)){
+            for(int i = 0; i < allParts.size(); i++){
+                if(Integer.parseInt(searchTerm) == allParts.get(i).getId()){
+                    index = i;
+                    System.out.println("Integer is: " );
+                    return index;
+                }
+            }
+        } else {
+            for(int i = 0; i < allParts.size(); i++){
+                if(searchTerm.equals(allParts.get(i).getName())) {
+                    index = i;
+                    return index;
+                }
+            }
+        }
+
+        System.out.println("No Search Results");
+        return -1;
+    }
+
+    public static boolean isInteger(String test) {
+        try {
+            Integer.parseInt(test);
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 }

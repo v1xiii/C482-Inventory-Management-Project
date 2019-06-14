@@ -1,8 +1,11 @@
 package views_controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.*;
 
@@ -28,6 +31,8 @@ public class MainScreenController implements Initializable {
     @FXML private TableColumn<Part, Integer> partTableColInv;
     @FXML private TableColumn<Part, Double> partTableColPrice;
 
+    @FXML private TextField partSearchField;
+
     private static Part partToModify;
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -38,8 +43,8 @@ public class MainScreenController implements Initializable {
         partTable.refresh();
         partTable.setItems(Inventory.getAllParts());
 
-        Inventory.getAllParts().add(new InHouse(1, "10-20mm lens", 250.02, 11, 1, 100, 4100));
-        Inventory.getAllParts().add(new Outsourced(2, "20-30mm lens", 300.01, 10, 1, 100, "Nikon"));
+        Inventory.getAllParts().add(new InHouse(1, "Gears", 25.50, 11, 1, 100, 4100));
+        Inventory.getAllParts().add(new Outsourced(2, "Capacitors", 1.25, 10, 1, 100, "Chengdu"));
     }
 
     @FXML
@@ -52,13 +57,12 @@ public class MainScreenController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("add-part-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Add Part");
-        //stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 750, 750));
         stage.show();
     }
 
-    public static Part getPartToModify(){
+    static Part getPartToModify(){
         return partToModify;
     }
 
@@ -74,7 +78,6 @@ public class MainScreenController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("modify-part-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Modify Part");
-        //stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 750, 750));
         stage.show();
@@ -87,11 +90,31 @@ public class MainScreenController implements Initializable {
     }
 
     @FXML
+    public void searchParts(ActionEvent event) throws IOException {
+        String searchTerm = partSearchField.getText();
+
+        int partIndex = -1;
+        //if(Inventory.lookupPart(searchPartString) == -1){
+            //Alert alert = new Alert(AlertType.INFORMATION);
+            //alert.setTitle("Search Error");
+            //alert.setHeaderText(searchPartString + " part not found");
+            //alert.setContentText(searchPartString + " does not match current records.");
+            //alert.showAndWait();
+        //} else {
+            partIndex = Inventory.searchParts(searchTerm) + 1;
+            System.out.println(partIndex);
+            Part tempPart = Inventory.getAllParts().get(partIndex);
+            ObservableList<Part> tempPartList = FXCollections.observableArrayList();
+            tempPartList.add(tempPart);
+            partTable.setItems(tempPartList);
+       // }
+    }
+
+    @FXML
     public void openAddProducts(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("add-product-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Add Product");
-        //stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 1366, 768));
         stage.show();
@@ -102,7 +125,6 @@ public class MainScreenController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("modify-product-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Modify Product");
-        //stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 1366, 768));
         stage.show();
