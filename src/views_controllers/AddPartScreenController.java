@@ -70,7 +70,7 @@ public class AddPartScreenController implements Initializable {
         String partCompOrMach = addPartFieldCompOrMach.getText();
 
 
-        if (partType == "In House") {
+        if (partType.equals("In House")) {
             InHouse inHousePart = new InHouse();
             inHousePart.setId(partID);
             inHousePart.setName(partName);

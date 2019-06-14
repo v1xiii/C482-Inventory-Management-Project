@@ -66,9 +66,9 @@
                 </TableView>
                 <HBox prefHeight="25.0" prefWidth="47.0" spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
                     <children>
-                        <Button fx:id="addPartButton" mnemonicParsing="false" onAction="#openAddParts" prefWidth="75.0" text="Add" />
-                        <Button fx:id="modifyPartButton" mnemonicParsing="false" onAction="#openModifyParts" prefWidth="75.0" text="Modify" />
-                        <Button mnemonicParsing="false" prefWidth="75.0" text="Delete" />
+                        <Button fx:id="addPartButton" onAction="#openAddParts" mnemonicParsing="false" prefWidth="75.0" text="Add" />
+                        <Button fx:id="modifyPartButton" onAction="#openModifyParts" mnemonicParsing="false" prefWidth="75.0" text="Modify" />
+                        <Button fx:id="deletePartButton" onAction="#deletePart" mnemonicParsing="false" prefWidth="75.0" text="Delete" />
                     </children>
                 </HBox>
             </children>

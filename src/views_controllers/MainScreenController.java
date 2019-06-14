@@ -30,6 +30,18 @@ public class MainScreenController implements Initializable {
 
     private static Part partToModify;
 
+    public void initialize(URL url, ResourceBundle rb) {
+        partTableColID.setCellValueFactory(new PropertyValueFactory<Part, Integer>("id"));
+        partTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
+        partTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
+        partTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
+        partTable.refresh();
+        partTable.setItems(Inventory.getAllParts());
+
+        Inventory.getAllParts().add(new InHouse(1, "10-20mm lens", 250.02, 11, 1, 100, 4100));
+        Inventory.getAllParts().add(new Outsourced(2, "20-30mm lens", 300.01, 10, 1, 100, "Nikon"));
+    }
+
     @FXML
     public void exitProgram(ActionEvent event) {
         System.exit(0);
@@ -68,6 +80,12 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    public void deletePart(){
+        Part partToDelete = partTable.getSelectionModel().getSelectedItem();
+
+        Inventory.deletePart(partToDelete);
+    }
+
     @FXML
     public void openAddProducts(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("add-product-screen.fxml"));
@@ -88,17 +106,5 @@ public class MainScreenController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 1366, 768));
         stage.show();
-    }
-
-    public void initialize(URL url, ResourceBundle rb) {
-        partTableColID.setCellValueFactory(new PropertyValueFactory<Part, Integer>("id"));
-        partTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
-        partTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
-        partTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
-        partTable.refresh();
-        partTable.setItems(Inventory.getAllParts());
-
-        Inventory.getAllParts().add(new InHouse(1, "10-20mm lens", 250.02, 11, 1, 100, 4100));
-        Inventory.getAllParts().add(new Outsourced(2, "20-30mm lens", 300.01, 10, 1, 100, "Nikon"));
     }
 }
