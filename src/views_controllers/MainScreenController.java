@@ -3,6 +3,7 @@ package views_controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -91,23 +92,24 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void searchParts(ActionEvent event) throws IOException {
-        String searchTerm = partSearchField.getText();
+        String searchTerm = partSearchField.getText().toLowerCase();
 
         int partIndex = -1;
-        //if(Inventory.lookupPart(searchPartString) == -1){
-            //Alert alert = new Alert(AlertType.INFORMATION);
-            //alert.setTitle("Search Error");
-            //alert.setHeaderText(searchPartString + " part not found");
-            //alert.setContentText(searchPartString + " does not match current records.");
-            //alert.showAndWait();
-        //} else {
-            partIndex = Inventory.searchParts(searchTerm) + 1;
-            System.out.println(partIndex);
+        if(Inventory.searchParts(searchTerm) == -1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(searchTerm + "Part Not Found");
+            alert.setContentText(searchTerm + "Search does not match any parts");
+            alert.showAndWait();
+        } else {
+            partIndex = Inventory.searchParts(searchTerm);
+            System.out.println("MainScreenController looking for index: " + partIndex);
             Part tempPart = Inventory.getAllParts().get(partIndex);
+            System.out.println("Part being found: " + tempPart.getName());
             ObservableList<Part> tempPartList = FXCollections.observableArrayList();
             tempPartList.add(tempPart);
             partTable.setItems(tempPartList);
-       // }
+        }
     }
 
     @FXML
