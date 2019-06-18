@@ -22,6 +22,6 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* main screen delete part button
-* main screen part search
+* add products functionality
+*
 * */

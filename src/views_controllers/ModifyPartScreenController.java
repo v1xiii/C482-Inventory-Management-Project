@@ -103,7 +103,7 @@ public class ModifyPartScreenController implements Initializable {
     }
 
     @FXML
-    private void modifyPartSaveButtonHandler() {
+    private void modifyPartSaveButtonHandler(ActionEvent event) {
         String partName = modifyPartFieldName.getText();
         String partInv = modifyPartFieldInv.getText();
         String partPrice = modifyPartFieldPrice.getText();
@@ -132,5 +132,8 @@ public class ModifyPartScreenController implements Initializable {
             outsourcedPart.setCompanyName(partCompOrMach);
             Inventory.updatePart(partID, outsourcedPart);
         }
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

@@ -61,7 +61,7 @@ public class AddPartScreenController implements Initializable {
     }
 
     @FXML
-    private void addPartSaveButtonHandler() {
+    private void addPartSaveButtonHandler(ActionEvent event) {
         String partName = addPartFieldName.getText();
         String partInv = addPartFieldInv.getText();
         String partPrice = addPartFieldPrice.getText();
@@ -91,6 +91,9 @@ public class AddPartScreenController implements Initializable {
             outsourcedPart.setCompanyName(partCompOrMach);
             Inventory.addPart(outsourcedPart);
         }
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     public void initialize(URL url, ResourceBundle rb) {
