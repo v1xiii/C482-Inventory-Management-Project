@@ -23,5 +23,5 @@ public class Main extends Application { //main calls launch, which calls start
 
 /* TODO
 * add products functionality
-*
+* cost columns need to display two decimal points
 * */

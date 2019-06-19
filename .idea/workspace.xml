@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Part search complete">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Products can be added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/c482_lee_scholl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/c482_lee_scholl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views_controllers/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views_controllers/main-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/main-screen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml" afterDir="false" />
     </list>
     <list id="28ca54ba-9839-437b-8995-1c40099f95a6" name="Revert &quot;FXML is working with some example code.&quot;" comment="Revert &quot;FXML is working with some example code.&quot;&#10;&#10;This reverts commit 360ef9df" />
     <ignored path="JavaFxApplication.iws" />
@@ -69,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/c482_lee_scholl/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="425">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1783#1784#0" expanded="true" />
@@ -80,15 +83,92 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views_controllers/main-screen.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="107" column="83" lean-forward="true" selection-start-line="107" selection-start-column="83" selection-end-line="107" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views_controllers/MainScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="117" column="34" lean-forward="true" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+            <state relative-caret-position="170">
+              <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1530#1531#0" expanded="true" />
-                <element signature="e#1565#1566#0" expanded="true" />
+                <element signature="e#3031#3032#0" expanded="true" />
+                <element signature="e#3061#3062#0" expanded="true" />
+                <element signature="e#3470#3471#0" expanded="true" />
+                <element signature="e#3505#3506#0" expanded="true" />
+                <element signature="e#3560#3561#0" expanded="true" />
+                <element signature="e#3624#3625#0" expanded="true" />
+                <element signature="e#5671#5672#0" expanded="true" />
+                <element signature="e#5709#5710#0" expanded="true" />
+                <element signature="e#5773#5774#0" expanded="true" />
+                <element signature="e#5843#5844#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="137" column="5" lean-forward="true" selection-start-line="104" selection-start-column="4" selection-end-line="137" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-part-screen.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="43" column="103" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+              <folding>
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1459#1460#0" expanded="true" />
+                <element signature="e#1509#1510#0" expanded="true" />
+                <element signature="e#1558#1559#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="86" column="13" lean-forward="true" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+            <state relative-caret-position="473">
+              <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#350#351#0" expanded="true" />
@@ -127,73 +207,9 @@
                 <element signature="e#1465#1466#0" expanded="true" />
                 <element signature="e#1506#1507#0" expanded="true" />
                 <element signature="e#1544#1545#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="95" column="22" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-part-screen.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="135" column="78" lean-forward="true" selection-start-line="135" selection-start-column="78" selection-end-line="135" selection-end-column="78" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views_controllers/add-part-screen.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="68" column="86" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/Part.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#927#928#0" expanded="true" />
-                <element signature="e#957#958#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/Outsourced.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -211,42 +227,48 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mainscreen</find>
-      <find>exit</find>
-      <find>add</find>
-      <find>border</find>
-      <find>modify</find>
-      <find>ID</find>
-      <find>cancel</find>
-      <find>disabled</find>
-      <find>textfield</find>
-      <find>table</find>
-      <find>company name</find>
-      <find>radio</find>
-      <find>label</find>
-      <find>company</find>
-      <find>outsourced</find>
-      <find>outPart</find>
-      <find>partMachComp</find>
-      <find>addPart</find>
-      <find>disablee</find>
       <find>outsour</find>
       <find>selected</find>
       <find>addPartField</find>
       <find>button</find>
-      <find>Delete</find>
       <find>Button</find>
       <find>+1</find>
       <find>-</find>
-      <find>+</find>
       <find>integer is</find>
+      <find>max</find>
+      <find>Max</find>
+      <find>TextField</find>
+      <find>disable</find>
+      <find>addPart</find>
       <find>integer</find>
+      <find>part</find>
+      <find>+</find>
+      <find>TableView</find>
+      <find>productTab</find>
+      <find>search</find>
+      <find>textField</find>
+      <find>partTable</find>
+      <find>Table</find>
+      <find>table</find>
+      <find>Delete</find>
+      <find>addProductField</find>
+      <find>modifyPart</find>
+      <find>Save</find>
+      <find>outsourcedProduct</find>
+      <find>Part</find>
+      <find>Search</find>
     </findStrings>
     <replaceStrings>
       <replace>outsourcedPart</replace>
       <replace>partCompOrMach</replace>
       <replace>modifyPart</replace>
+      <replace>addProduct</replace>
       <replace>modifyPartField</replace>
+      <replace>productTable</replace>
+      <replace>Product</replace>
+      <replace>modifyProduct</replace>
+      <replace>product</replace>
+      <replace>Products</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -277,17 +299,21 @@
         <option value="$PROJECT_DIR$/src/views_controllers/Main.java" />
         <option value="$PROJECT_DIR$/src/models/test.java" />
         <option value="$PROJECT_DIR$/src/models/Product.java" />
-        <option value="$PROJECT_DIR$/src/views_controllers/add-part-screen.fxml" />
         <option value="$PROJECT_DIR$/src/models/Part.java" />
         <option value="$PROJECT_DIR$/src/models/Outsourced.java" />
         <option value="$PROJECT_DIR$/src/models/InHouse.java" />
         <option value="$PROJECT_DIR$/src/views_controllers/modify-part-screen.fxml" />
-        <option value="$PROJECT_DIR$/src/views_controllers/main-screen.fxml" />
-        <option value="$PROJECT_DIR$/src/models/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/views_controllers/MainScreenController.java" />
-        <option value="$PROJECT_DIR$/src/c482_lee_scholl/Main.java" />
         <option value="$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java" />
+        <option value="$PROJECT_DIR$/src/views_controllers/add-part-screen.fxml" />
+        <option value="$PROJECT_DIR$/src/views_controllers/add-product-screen.fxml" />
+        <option value="$PROJECT_DIR$/src/c482_lee_scholl/Main.java" />
+        <option value="$PROJECT_DIR$/src/views_controllers/AddProductScreenController.java" />
         <option value="$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java" />
+        <option value="$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java" />
+        <option value="$PROJECT_DIR$/src/views_controllers/MainScreenController.java" />
+        <option value="$PROJECT_DIR$/src/models/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml" />
+        <option value="$PROJECT_DIR$/src/views_controllers/main-screen.fxml" />
       </list>
     </option>
   </component>
@@ -580,7 +606,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560545267076</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add and modify part windows now close when saving">
+      <created>1560899098610</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560899098610</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Products can be added">
+      <created>1560909870823</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1560909870823</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -599,7 +639,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.11513859" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.11513859" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -608,7 +648,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19609967" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19609967" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -693,7 +733,9 @@
     <MESSAGE value="modify part screen save function is working" />
     <MESSAGE value="delete part button is working" />
     <MESSAGE value="Part search complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part search complete" />
+    <MESSAGE value="Add and modify part windows now close when saving" />
+    <MESSAGE value="Products can be added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Products can be added" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -725,60 +767,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/AddProductScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/add-product-screen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/models/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/util/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -789,22 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/add-part-screen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="68" column="86" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/main-screen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="56" column="31" lean-forward="true" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Outsourced.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -812,17 +789,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-part-screen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/models/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
+        <state relative-caret-position="748">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
+            <element signature="e#1558#1559#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Part.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
+        <state relative-caret-position="425">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#927#928#0" expanded="true" />
@@ -831,10 +813,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/c482_lee_scholl/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1783#1784#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/add-part-screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="130" column="41" lean-forward="true" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/AddProductScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="33" column="63" lean-forward="true" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/add-product-screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="86" column="57" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="102" column="5" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="102" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="137" column="5" lean-forward="true" selection-start-line="104" selection-start-column="4" selection-end-line="137" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="86" column="13" lean-forward="true" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        <state relative-caret-position="473">
+          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#350#351#0" expanded="true" />
@@ -863,51 +903,63 @@
             <element signature="e#1465#1466#0" expanded="true" />
             <element signature="e#1506#1507#0" expanded="true" />
             <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyProductScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-part-screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/modify-product-screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="43" column="103" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views_controllers/MainScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="117" column="34" lean-forward="true" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+        <state relative-caret-position="170">
+          <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#3031#3032#0" expanded="true" />
+            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#3470#3471#0" expanded="true" />
+            <element signature="e#3505#3506#0" expanded="true" />
+            <element signature="e#3560#3561#0" expanded="true" />
+            <element signature="e#3624#3625#0" expanded="true" />
+            <element signature="e#5671#5672#0" expanded="true" />
+            <element signature="e#5709#5710#0" expanded="true" />
+            <element signature="e#5773#5774#0" expanded="true" />
+            <element signature="e#5843#5844#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c482_lee_scholl/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/views_controllers/main-screen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1860#1861#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/AddPartScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="95" column="22" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views_controllers/ModifyPartScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="135" column="78" lean-forward="true" selection-start-line="135" selection-start-column="78" selection-end-line="135" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="314">
+          <caret line="107" column="83" lean-forward="true" selection-start-line="107" selection-start-column="83" selection-end-line="107" selection-end-column="83" />
         </state>
       </provider>
     </entry>

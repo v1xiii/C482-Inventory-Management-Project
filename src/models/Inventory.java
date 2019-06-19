@@ -95,6 +95,38 @@ public class Inventory {
         }
     }
 
+    public static int searchProducts(String searchTerm){
+        boolean isFound = false;
+        int index = 0;
+
+        System.out.println("Search term: " + searchTerm);
+
+        if(isInteger(searchTerm)){
+            for(int i = 0; i < allProducts.size(); i++){
+                if(Integer.parseInt(searchTerm) == allProducts.get(i).getId()){
+                    index = i;
+                    System.out.println("Integer detected, returning: " + index);
+                    isFound  = true;
+                }
+            }
+        } else {
+            for(int i = 0; i < allProducts.size(); i++){
+                if(searchTerm.equals(allProducts.get(i).getName().toLowerCase())) {
+                    index = i;
+                    System.out.println("String detected, returning: " + index);
+                    isFound  = true;
+                }
+            }
+        }
+
+        if(isFound){
+            return index;
+        } else {
+            System.out.println("No Search Results");
+            return -1;
+        }
+    }
+
     public static boolean isInteger(String test) {
         try {
             Integer.parseInt(test);

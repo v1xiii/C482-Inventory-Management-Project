@@ -31,10 +31,17 @@ public class MainScreenController implements Initializable {
     @FXML private TableColumn<Part, String> partTableColName;
     @FXML private TableColumn<Part, Integer> partTableColInv;
     @FXML private TableColumn<Part, Double> partTableColPrice;
-
     @FXML private TextField partSearchField;
 
+    @FXML private TableView<Product> productTable;
+    @FXML private TableColumn<Product, Integer> productTableColID;
+    @FXML private TableColumn<Product, String> productTableColName;
+    @FXML private TableColumn<Product, Integer> productTableColInv;
+    @FXML private TableColumn<Product, Double> productTableColPrice;
+    @FXML private TextField productSearchField;
+
     private static Part partToModify;
+    private static Product productToModify;
 
     public void initialize(URL url, ResourceBundle rb) {
         partTableColID.setCellValueFactory(new PropertyValueFactory<Part, Integer>("id"));
@@ -44,8 +51,18 @@ public class MainScreenController implements Initializable {
         partTable.refresh();
         partTable.setItems(Inventory.getAllParts());
 
-        Inventory.getAllParts().add(new InHouse(1, "Gears", 25.50, 11, 1, 100, 4100));
-        Inventory.getAllParts().add(new Outsourced(2, "Capacitors", 1.25, 10, 1, 100, "Chengdu"));
+        productTableColID.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
+        productTableColName.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
+        productTableColInv.setCellValueFactory(new PropertyValueFactory<Product, Integer>("stock"));
+        productTableColPrice.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        productTable.refresh();
+        productTable.setItems(Inventory.getAllProducts());
+
+        Inventory.getAllParts().add(new InHouse(1, "Gears", 25.50, 200, 0, 500, 4100));
+        Inventory.getAllParts().add(new Outsourced(2, "Capacitors", 1.25, 100, 0, 500, "Chengdu"));
+
+        Inventory.getAllProducts().add(new Product(1, "Mechanism", 205.50, 11, 0, 100));
+        Inventory.getAllProducts().add(new Product(2, "Machine", 200.25, 10, 0, 100));
     }
 
     @FXML
@@ -86,7 +103,6 @@ public class MainScreenController implements Initializable {
 
     public void deletePart(){
         Part partToDelete = partTable.getSelectionModel().getSelectedItem();
-
         Inventory.deletePart(partToDelete);
     }
 
@@ -122,13 +138,51 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    static Product getProductToModify(){
+        return productToModify;
+    }
+
+    private void setProductToModify(Product productToModify) {
+        MainScreenController.productToModify = productToModify;
+    }
+
     @FXML
     public void openModifyProducts(ActionEvent event) throws IOException {
+
+        setProductToModify(productTable.getSelectionModel().getSelectedItem());
+
         Parent root = FXMLLoader.load(getClass().getResource("modify-product-screen.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Modify Product");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root, 1366, 768));
         stage.show();
+    }
+
+    public void deleteProduct(){
+        Product productToDelete = productTable.getSelectionModel().getSelectedItem();
+        Inventory.deleteProduct(productToDelete);
+    }
+
+    @FXML
+    public void searchProducts(ActionEvent event) throws IOException {
+        String searchTerm = productSearchField.getText().toLowerCase();
+
+        int productIndex = -1;
+        if(Inventory.searchProducts(searchTerm) == -1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(searchTerm + "Product Not Found");
+            alert.setContentText(searchTerm + "Search does not match any products");
+            alert.showAndWait();
+        } else {
+            productIndex = Inventory.searchProducts(searchTerm);
+            System.out.println("MainScreenController looking for index: " + productIndex);
+            Product tempProduct = Inventory.getAllProducts().get(productIndex);
+            System.out.println("Product being found: " + tempProduct.getName());
+            ObservableList<Product> tempProductList = FXCollections.observableArrayList();
+            tempProductList.add(tempProduct);
+            productTable.setItems(tempProductList);
+        }
     }
 }

@@ -99,8 +99,8 @@
                 </Label>
                 <HBox spacing="10.0" GridPane.columnIndex="2" GridPane.columnSpan="2">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="75.0" text="Search" />
-                        <TextField prefHeight="10.0" prefWidth="132.0" />
+                        <Button fx:id="productSearchButton" onAction="#searchProducts" mnemonicParsing="false" prefHeight="20.0" prefWidth="75.0" text="Search" />
+                        <TextField fx:id="productSearchField" prefHeight="10.0" prefWidth="132.0" />
                     </children>
                 </HBox>
                 <TableView fx:id="productTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
@@ -115,7 +115,7 @@
                     <children>
                         <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#openAddProducts" prefWidth="75.0" text="Add" />
                         <Button fx:id="ModifyProductButton" mnemonicParsing="false" onAction="#openModifyProducts" prefWidth="75.0" text="Modify" />
-                        <Button mnemonicParsing="false" prefWidth="75.0" text="Delete" />
+                        <Button fx:id="deleteProductButton" onAction="#deleteProduct" mnemonicParsing="false" prefWidth="75.0" text="Delete" />
                     </children>
                 </HBox>
             </children>
