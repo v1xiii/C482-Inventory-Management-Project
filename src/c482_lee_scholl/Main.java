@@ -22,6 +22,6 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* add products functionality
+* parts are adding and saving in modify products, but only if you DON'T hit the save button?!
 * cost columns need to display two decimal points
 * */

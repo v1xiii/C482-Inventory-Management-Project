@@ -1,9 +1,10 @@
 package models;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Product extends Inventory{
-    private ObservableList<Part> associatedParts;
+    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
     private int id;
     private String name;
     private double price;
@@ -75,6 +76,7 @@ public class Product extends Inventory{
 
     //helpers
     public void addAssociatedPart(Part part){
+        //System.out.println(part.getName());
         this.associatedParts.add(part);
     }
 
