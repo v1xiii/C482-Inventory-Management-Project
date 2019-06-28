@@ -58,11 +58,11 @@ public class MainScreenController implements Initializable {
         productTable.refresh();
         productTable.setItems(Inventory.getAllProducts());
 
-        Inventory.getAllParts().add(new InHouse(1, "Gears", 25.50, 200, 0, 500, 4100));
-        Inventory.getAllParts().add(new Outsourced(2, "Capacitors", 1.25, 100, 0, 500, "Chengdu"));
+        Inventory.getAllParts().add(new InHouse(0, "Gears", 25.50, 200, 0, 500, 4100));
+        Inventory.getAllParts().add(new Outsourced(1, "Capacitors", 1.25, 100, 0, 500, "Chengdu"));
 
-        Inventory.getAllProducts().add(new Product(1, "Mechanism", 205.50, 11, 0, 100));
-        Inventory.getAllProducts().add(new Product(2, "Machine", 200.25, 10, 0, 100));
+        Inventory.getAllProducts().add(new Product(0, "Mechanism", 205.50, 11, 0, 100));
+        Inventory.getAllProducts().add(new Product(1, "Machine", 200.25, 10, 0, 100));
     }
 
     @FXML

@@ -6,20 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddProductScreenController implements Initializable {
 
-    private Product product;
+    private Product product = new Product();
     private String productType;
     private int productID;
 
@@ -30,6 +28,8 @@ public class AddProductScreenController implements Initializable {
     @FXML private TextField addProductFieldMax;
     @FXML private TextField addProductFieldMin;
     @FXML private Button addProductButtonSave;
+
+    @FXML private TextField partSearchField;
 
     @FXML private TableView<Part> allPartsTable;
     @FXML private TableColumn<Part, Integer> allPartsTableColID;
@@ -81,7 +81,7 @@ public class AddProductScreenController implements Initializable {
         String productMax = addProductFieldMin.getText();
         //String productCompOrMach = addProductFieldCompOrMach.getText();
 
-        product.setId(productID);
+        product.setId(productID + 1);
         product.setName(productName);
         product.setStock(Integer.parseInt(productInv));
         product.setPrice(Double.parseDouble(productPrice));
@@ -90,23 +90,44 @@ public class AddProductScreenController implements Initializable {
         //product.setCompanyName(productCompOrMach);
         Inventory.addProduct(product);
 
-        //Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        //stage.close();
-
-        System.out.println(product.getName());
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     private void addProductAssocPartHandler(ActionEvent event) {
-        Part part = allPartsTable.getSelectionModel().getSelectedItem();
-        product.addAssociatedPart(part);
-        assocParts.add(part);
-        assocPartsTable.setItems(assocParts);
+        Part part = allPartsTable.getSelectionModel().getSelectedItem(); // grab the selected part
+        product.addAssociatedPart(part); // attach it to this product
+        assocParts.add(part); // add it to this observableList
+        assocPartsTable.setItems(assocParts); // add the observableList to the table
         System.out.println(product.getAllAssociatedParts());
     }
 
     @FXML
     private void addProductRemovePartHandler(ActionEvent event) {
+        Part part = assocPartsTable.getSelectionModel().getSelectedItem();
+        product.deleteAssociatedPart(part);
+        assocParts.remove(part);
+    }
 
+    public void searchParts(ActionEvent event) throws IOException {
+        String searchTerm = partSearchField.getText().toLowerCase();
+
+        int partIndex = -1;
+        if(Inventory.searchParts(searchTerm) == -1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(searchTerm + "Part Not Found");
+            alert.setContentText(searchTerm + "Search does not match any parts");
+            alert.showAndWait();
+        } else {
+            partIndex = Inventory.searchParts(searchTerm);
+            System.out.println("MainScreenController looking for index: " + partIndex);
+            Part tempPart = Inventory.getAllParts().get(partIndex);
+            System.out.println("Part being found: " + tempPart.getName());
+            ObservableList<Part> tempPartList = FXCollections.observableArrayList();
+            tempPartList.add(tempPart);
+            allPartsTable.setItems(tempPartList);
+        }
     }
 }

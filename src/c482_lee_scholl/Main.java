@@ -22,6 +22,10 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* parts are adding and saving in modify products, but only if you DON'T hit the save button?!
+* ensuring that a product must always have at least one part
+* including a confirm dialogue for all "Delete" and "Cancel" buttons
+*  WANNADO
 * cost columns need to display two decimal points
+* id # generation is hot garbage
+* make blank search show all items
 * */
