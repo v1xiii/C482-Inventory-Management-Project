@@ -26,6 +26,6 @@ public class Main extends Application { //main calls launch, which calls start
 * including a confirm dialogue for all "Delete" and "Cancel" buttons
 *  WANNADO
 * cost columns need to display two decimal points
-* id # generation is hot garbage
+*
 * make blank search show all items
 * */

@@ -47,7 +47,7 @@ public class ModifyProductScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         product = MainScreenController.getProductToModify();
 
-        productID = product.getId() - 1;
+        productID = product.getId();
 
         modifyProductFieldID.setText(Integer.toString(product.getId()));
         modifyProductFieldName.setText(product.getName());
@@ -87,7 +87,7 @@ public class ModifyProductScreenController implements Initializable {
             String productMax = modifyProductFieldMin.getText();
 
             //Product product = new Product();
-            product.setId(productID + 1);
+            product.setId(productID);
             product.setName(productName);
             product.setStock(Integer.parseInt(productInv));
             product.setPrice(Double.parseDouble(productPrice));

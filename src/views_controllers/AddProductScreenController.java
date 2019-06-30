@@ -83,7 +83,7 @@ public class AddProductScreenController implements Initializable {
             String productMax = addProductFieldMin.getText();
             //String productCompOrMach = addProductFieldCompOrMach.getText();
 
-            product.setId(productID + 1);
+            product.setId(productID);
             product.setName(productName);
             product.setStock(Integer.parseInt(productInv));
             product.setPrice(Double.parseDouble(productPrice));

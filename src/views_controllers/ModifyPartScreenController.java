@@ -39,7 +39,7 @@ public class ModifyPartScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         part = MainScreenController.getPartToModify();
 
-        partID = part.getId() - 1;
+        partID = part.getId();
 
         System.out.println(partID);
 
@@ -113,7 +113,7 @@ public class ModifyPartScreenController implements Initializable {
 
         if (inHouse_Radio.isSelected()) {
             InHouse inHousePart = new InHouse();
-            inHousePart.setId(partID + 1);
+            inHousePart.setId(partID);
             inHousePart.setName(partName);
             inHousePart.setStock(Integer.parseInt(partInv));
             inHousePart.setPrice(Double.parseDouble(partPrice));
@@ -123,7 +123,7 @@ public class ModifyPartScreenController implements Initializable {
             Inventory.updatePart(partID, inHousePart);
         } else {
             Outsourced outsourcedPart = new Outsourced();
-            outsourcedPart.setId(partID + 1);
+            outsourcedPart.setId(partID);
             outsourcedPart.setName(partName);
             outsourcedPart.setStock(Integer.parseInt(partInv));
             outsourcedPart.setPrice(Double.parseDouble(partPrice));
