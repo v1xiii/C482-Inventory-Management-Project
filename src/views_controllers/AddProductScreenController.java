@@ -13,6 +13,7 @@ import models.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AddProductScreenController implements Initializable {
@@ -68,8 +69,16 @@ public class AddProductScreenController implements Initializable {
 
     @FXML
     public void closeWindow(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Canceling");
+        alert.setContentText("Are you sure you want to cancel adding this product?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+        }
     }
 
     @FXML
@@ -115,8 +124,17 @@ public class AddProductScreenController implements Initializable {
     @FXML
     private void addProductRemovePartHandler(ActionEvent event) {
         Part part = assocPartsTable.getSelectionModel().getSelectedItem();
-        product.deleteAssociatedPart(part);
-        assocParts.remove(part);
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Removing part #" + part.getId() + " - \"" + part.getName() + "\"");
+        alert.setContentText("Are you sure you want to remove the part from this product?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            product.deleteAssociatedPart(part);
+            assocParts.remove(part);
+        }
     }
 
     public void searchParts(ActionEvent event) throws IOException {

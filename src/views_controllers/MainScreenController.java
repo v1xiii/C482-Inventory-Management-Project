@@ -3,10 +3,7 @@ package views_controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.*;
 
@@ -19,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
@@ -102,8 +100,18 @@ public class MainScreenController implements Initializable {
     }
 
     public void deletePart(){
+
         Part partToDelete = partTable.getSelectionModel().getSelectedItem();
-        Inventory.deletePart(partToDelete);
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Deleting part #" + partToDelete.getId() + " - \"" + partToDelete.getName() + "\"");
+        alert.setContentText("Are you sure you want to delete this part?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK){
+            Inventory.deletePart(partToDelete);
+        }
     }
 
     @FXML
@@ -161,7 +169,16 @@ public class MainScreenController implements Initializable {
 
     public void deleteProduct(){
         Product productToDelete = productTable.getSelectionModel().getSelectedItem();
-        Inventory.deleteProduct(productToDelete);
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Deleting product #" + productToDelete.getId() + " - \"" + productToDelete.getName() + "\"");
+        alert.setContentText("Are you sure you want to delete this product?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            Inventory.deleteProduct(productToDelete);
+        }
     }
 
     @FXML
