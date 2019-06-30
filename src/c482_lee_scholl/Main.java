@@ -23,9 +23,9 @@ public class Main extends Application { //main calls launch, which calls start
 
 /* TODO
 * if you delete a part or product with an id prior to the last id and add a new part or product, it will create a duplicate ID
-* including a confirm dialogue for all "Delete" and "Cancel" buttons
+*
 *  WANNADO
-* cost columns need to display two decimal points
+* 
 *
 * make blank search show all items
 * */

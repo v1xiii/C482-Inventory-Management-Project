@@ -13,6 +13,7 @@ import models.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -50,6 +51,8 @@ public class ModifyProductScreenController implements Initializable {
 
         productID = product.getId();
 
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+
         modifyProductFieldID.setText(Integer.toString(product.getId()));
         modifyProductFieldName.setText(product.getName());
         modifyProductFieldInv.setText(Integer.toString(product.getStock()));
@@ -61,6 +64,17 @@ public class ModifyProductScreenController implements Initializable {
         allPartsTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
         allPartsTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
         allPartsTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
+        allPartsTableColPrice.setCellFactory(tc -> new TableCell<Part, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    setText(currencyFormat.format(price));
+                }
+            }
+        });
         allPartsTable.refresh();
         allPartsTable.setItems(Inventory.getAllParts());
 
@@ -68,6 +82,17 @@ public class ModifyProductScreenController implements Initializable {
         assocPartsTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
         assocPartsTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
         assocPartsTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
+        assocPartsTableColPrice.setCellFactory(tc -> new TableCell<Part, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    setText(currencyFormat.format(price));
+                }
+            }
+        });
         assocPartsTable.refresh();
         assocPartsTable.setItems(product.getAllAssociatedParts());
     }

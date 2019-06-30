@@ -16,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -42,10 +43,23 @@ public class MainScreenController implements Initializable {
     private static Product productToModify;
 
     public void initialize(URL url, ResourceBundle rb) {
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+
         partTableColID.setCellValueFactory(new PropertyValueFactory<Part, Integer>("id"));
         partTableColName.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
         partTableColInv.setCellValueFactory(new PropertyValueFactory<Part, Integer>("stock"));
         partTableColPrice.setCellValueFactory(new PropertyValueFactory<Part, Double>("price"));
+        partTableColPrice.setCellFactory(tc -> new TableCell<Part, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    setText(currencyFormat.format(price));
+                }
+            }
+        });
         partTable.refresh();
         partTable.setItems(Inventory.getAllParts());
 
@@ -53,6 +67,18 @@ public class MainScreenController implements Initializable {
         productTableColName.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
         productTableColInv.setCellValueFactory(new PropertyValueFactory<Product, Integer>("stock"));
         productTableColPrice.setCellValueFactory(new PropertyValueFactory<Product, Double>("price"));
+        productTableColPrice.setCellFactory(tc -> new TableCell<Product, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty) {
+                    setText(null);
+                } else {
+                    setText(currencyFormat.format(price));
+                }
+            }
+        });
+
         productTable.refresh();
         productTable.setItems(Inventory.getAllProducts());
 
