@@ -76,7 +76,6 @@ public class Product extends Inventory{
 
     //helpers
     public void addAssociatedPart(Part part){
-        //System.out.println(part.getName());
         this.associatedParts.add(part);
     }
 

@@ -120,7 +120,6 @@ public class ModifyProductScreenController implements Initializable {
             String productMin = modifyProductFieldMax.getText();
             String productMax = modifyProductFieldMin.getText();
 
-            //Product product = new Product();
             product.setId(productID);
             product.setName(productName);
             product.setStock(Integer.parseInt(productInv));
@@ -128,8 +127,6 @@ public class ModifyProductScreenController implements Initializable {
             product.setMax(Integer.parseInt(productMax));
             product.setMin(Integer.parseInt(productMin));
             Inventory.updateProduct(productID, product);
-
-            //System.out.println(product.getAllAssociatedParts());
 
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.close();
@@ -173,8 +170,8 @@ public class ModifyProductScreenController implements Initializable {
         if(Inventory.searchParts(searchTerm) == -1){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setHeaderText(searchTerm + "Part Not Found");
-            alert.setContentText(searchTerm + "Search does not match any parts");
+            alert.setHeaderText("\"" + searchTerm + "\" " + "Not Found");
+            alert.setContentText("Search does not match any parts");
             alert.showAndWait();
         } else {
             partIndex = Inventory.searchParts(searchTerm);

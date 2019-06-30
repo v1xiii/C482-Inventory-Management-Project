@@ -52,7 +52,6 @@ public class AddPartScreenController implements Initializable {
             addPartLabelCompOrMach.setText("Machine ID");
             partType = "In House";
             addPartFieldCompOrMach.setText("");
-            //addPartRadioOutsourced.setSelected(false);
         }
     }
 
@@ -62,7 +61,6 @@ public class AddPartScreenController implements Initializable {
             addPartLabelCompOrMach.setText("Company Name");
             partType = "Outsourced";
             addPartFieldCompOrMach.setText("");
-            //addPartRadioInHouse.setSelected(false);
         }
     }
 

@@ -48,7 +48,6 @@ public class AddProductScreenController implements Initializable {
     private final ObservableList<Part> assocParts = FXCollections.observableArrayList();
 
     public void initialize(URL url, ResourceBundle rb) {
-        //partType = "In House";
         Product product = new Product();
         productID = Inventory.getProductsLength();
         addProductFieldID.setText(Integer.toString(productID));
@@ -89,7 +88,6 @@ public class AddProductScreenController implements Initializable {
             }
         });
         assocPartsTable.refresh();
-        //assocPartsTable.setItems(product.getAllAssociatedParts());
     }
 
     @FXML
@@ -108,14 +106,12 @@ public class AddProductScreenController implements Initializable {
 
     @FXML
     private void addProductSaveButtonHandler(ActionEvent event) {
-        //System.out.println(product.getAllAssociatedParts().size());
         if (product.getAllAssociatedParts().size() > 0) {
             String productName = addProductFieldName.getText();
             String productInv = addProductFieldInv.getText();
             String productPrice = addProductFieldPrice.getText();
             String productMin = addProductFieldMax.getText();
             String productMax = addProductFieldMin.getText();
-            //String productCompOrMach = addProductFieldCompOrMach.getText();
 
             product.setId(productID);
             product.setName(productName);
@@ -123,7 +119,6 @@ public class AddProductScreenController implements Initializable {
             product.setPrice(Double.parseDouble(productPrice));
             product.setMax(Integer.parseInt(productMax));
             product.setMin(Integer.parseInt(productMin));
-            //product.setCompanyName(productCompOrMach);
             Inventory.addProduct(product);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -169,8 +164,8 @@ public class AddProductScreenController implements Initializable {
         if(Inventory.searchParts(searchTerm) == -1){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setHeaderText(searchTerm + "Part Not Found");
-            alert.setContentText(searchTerm + "Search does not match any parts");
+            alert.setHeaderText("\"" + searchTerm + "\" " + "Not Found");
+            alert.setContentText("Search does not match any parts");
             alert.showAndWait();
         } else {
             partIndex = Inventory.searchParts(searchTerm);

@@ -53,14 +53,12 @@ public class ModifyPartScreenController implements Initializable {
             labelInitialValue = "Machine ID";
             modifyPartFieldCompOrMach.setText(Integer.toString(((InHouse) part).getMachineId()));
             inHouse_Radio.setSelected(true);
-            //outsourced_Radio.setSelected(false);
         }
         else {
             inHouseOutsourced_Label.setText("Company Name");
             labelInitialValue = "Company Name";
             modifyPartFieldCompOrMach.setText(((Outsourced) part).getCompanyName());
             outsourced_Radio.setSelected(true);
-            //inHouse_Radio.setSelected(false);
         }
     }
 
@@ -89,7 +87,6 @@ public class ModifyPartScreenController implements Initializable {
             } else {
                 modifyPartFieldCompOrMach.setText("");
             }
-            //inHouse_Radio.setSelected(false);
         }
     }
 
@@ -104,7 +101,6 @@ public class ModifyPartScreenController implements Initializable {
             } else {
                 modifyPartFieldCompOrMach.setText("");
             }
-            //outsourced_Radio.setSelected(false);
         }
     }
 

@@ -22,9 +22,6 @@ import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
 
-    //@FXML private Button exitButton;
-    //@FXML private Button addPartButton;
-
     @FXML private TableView<Part> partTable;
     @FXML private TableColumn<Part, Integer> partTableColID;
     @FXML private TableColumn<Part, String> partTableColName;
@@ -82,11 +79,11 @@ public class MainScreenController implements Initializable {
         productTable.refresh();
         productTable.setItems(Inventory.getAllProducts());
 
-        Inventory.getAllParts().add(new InHouse(0, "Gears", 25.50, 200, 0, 500, 4100));
-        Inventory.getAllParts().add(new Outsourced(1, "Capacitors", 1.25, 100, 0, 500, "Chengdu"));
+        //Inventory.getAllParts().add(new InHouse(0, "Gears", 25.50, 200, 0, 500, 4100));
+        //Inventory.getAllParts().add(new Outsourced(1, "Capacitors", 1.25, 100, 0, 500, "Chengdu"));
 
-        Inventory.getAllProducts().add(new Product(0, "Mechanism", 205.50, 11, 0, 100));
-        Inventory.getAllProducts().add(new Product(1, "Machine", 200.25, 10, 0, 100));
+        //Inventory.getAllProducts().add(new Product(0, "Mechanism", 205.50, 11, 0, 100));
+        //Inventory.getAllProducts().add(new Product(1, "Machine", 200.25, 10, 0, 100));
     }
 
     @FXML
@@ -148,8 +145,8 @@ public class MainScreenController implements Initializable {
         if(Inventory.searchParts(searchTerm) == -1){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setHeaderText(searchTerm + "Part Not Found");
-            alert.setContentText(searchTerm + "Search does not match any parts");
+            alert.setHeaderText("\"" + searchTerm + "\" " + "Not Found");
+            alert.setContentText("Search does not match any parts");
             alert.showAndWait();
         } else {
             partIndex = Inventory.searchParts(searchTerm);
@@ -215,8 +212,8 @@ public class MainScreenController implements Initializable {
         if(Inventory.searchProducts(searchTerm) == -1){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setHeaderText(searchTerm + "Product Not Found");
-            alert.setContentText(searchTerm + "Search does not match any products");
+            alert.setHeaderText("\"" + searchTerm + "\" " + "Not Found");
+            alert.setContentText("Search does not match any products");
             alert.showAndWait();
         } else {
             productIndex = Inventory.searchProducts(searchTerm);
