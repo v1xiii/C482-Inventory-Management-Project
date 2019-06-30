@@ -22,7 +22,7 @@ public class Main extends Application { //main calls launch, which calls start
 }
 
 /* TODO
-* ensuring that a product must always have at least one part
+*
 * including a confirm dialogue for all "Delete" and "Cancel" buttons
 *  WANNADO
 * cost columns need to display two decimal points

@@ -79,26 +79,33 @@ public class ModifyProductScreenController implements Initializable {
 
     @FXML
     private void modifyProductSaveButtonHandler(ActionEvent event) {
+        if (product.getAllAssociatedParts().size() > 0) {
+            String productName = modifyProductFieldName.getText();
+            String productInv = modifyProductFieldInv.getText();
+            String productPrice = modifyProductFieldPrice.getText();
+            String productMin = modifyProductFieldMax.getText();
+            String productMax = modifyProductFieldMin.getText();
 
-        String productName = modifyProductFieldName.getText();
-        String productInv = modifyProductFieldInv.getText();
-        String productPrice = modifyProductFieldPrice.getText();
-        String productMin = modifyProductFieldMax.getText();
-        String productMax = modifyProductFieldMin.getText();
-        
-        //Product product = new Product();
-        product.setId(productID + 1);
-        product.setName(productName);
-        product.setStock(Integer.parseInt(productInv));
-        product.setPrice(Double.parseDouble(productPrice));
-        product.setMax(Integer.parseInt(productMax));
-        product.setMin(Integer.parseInt(productMin));
-        Inventory.updateProduct(productID, product);
+            //Product product = new Product();
+            product.setId(productID + 1);
+            product.setName(productName);
+            product.setStock(Integer.parseInt(productInv));
+            product.setPrice(Double.parseDouble(productPrice));
+            product.setMax(Integer.parseInt(productMax));
+            product.setMin(Integer.parseInt(productMin));
+            Inventory.updateProduct(productID, product);
 
-        //System.out.println(product.getAllAssociatedParts());
+            //System.out.println(product.getAllAssociatedParts());
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.close();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.close();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText("Product has no parts");
+            alert.setContentText("Product must have at least one associated part.");
+            alert.showAndWait();
+        }
     }
 
     @FXML

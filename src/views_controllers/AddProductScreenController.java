@@ -74,24 +74,33 @@ public class AddProductScreenController implements Initializable {
 
     @FXML
     private void addProductSaveButtonHandler(ActionEvent event) {
-        String productName = addProductFieldName.getText();
-        String productInv = addProductFieldInv.getText();
-        String productPrice = addProductFieldPrice.getText();
-        String productMin = addProductFieldMax.getText();
-        String productMax = addProductFieldMin.getText();
-        //String productCompOrMach = addProductFieldCompOrMach.getText();
+        //System.out.println(product.getAllAssociatedParts().size());
+        if (product.getAllAssociatedParts().size() > 0) {
+            String productName = addProductFieldName.getText();
+            String productInv = addProductFieldInv.getText();
+            String productPrice = addProductFieldPrice.getText();
+            String productMin = addProductFieldMax.getText();
+            String productMax = addProductFieldMin.getText();
+            //String productCompOrMach = addProductFieldCompOrMach.getText();
 
-        product.setId(productID + 1);
-        product.setName(productName);
-        product.setStock(Integer.parseInt(productInv));
-        product.setPrice(Double.parseDouble(productPrice));
-        product.setMax(Integer.parseInt(productMax));
-        product.setMin(Integer.parseInt(productMin));
-        //product.setCompanyName(productCompOrMach);
-        Inventory.addProduct(product);
+            product.setId(productID + 1);
+            product.setName(productName);
+            product.setStock(Integer.parseInt(productInv));
+            product.setPrice(Double.parseDouble(productPrice));
+            product.setMax(Integer.parseInt(productMax));
+            product.setMin(Integer.parseInt(productMin));
+            //product.setCompanyName(productCompOrMach);
+            Inventory.addProduct(product);
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.close();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText("Product has no parts");
+            alert.setContentText("Product must have at least one associated part.");
+            alert.showAndWait();
+        }
     }
 
     @FXML
