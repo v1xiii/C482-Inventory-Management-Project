@@ -111,7 +111,6 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void openModifyParts(ActionEvent event) throws IOException {
-
         setPartToModify(partTable.getSelectionModel().getSelectedItem());
 
         Parent root = FXMLLoader.load(getClass().getResource("modify-part-screen.fxml"));
